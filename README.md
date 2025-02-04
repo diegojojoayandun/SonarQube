@@ -1,6 +1,6 @@
 # Instalación de SonarQube
 
-## Opción 1: Script de PowerShell
+## Opción 1: PowerShell
 
 1. Ejecuta PowerShell como administrador
 2. Pega el siguiente comando:
@@ -13,12 +13,12 @@
 
 3. Ingresa mediante http://localhost:9000
 
-## Opción 2: Script en Python (Python 3 requerido)
+## Opción 2: Python
 
 ### Prerrequisitos:
 
-- Tener **Python 3.x** instalado y agregado a las variables de entorno del sistema.
-- Asegurarte de que **pip** esté actualizado ejecutando el siguiente comando en la terminal de Windows (CMD o PowerShell):
+- **Python 3.x**
+- **pip**:
   ```powershell
   python -m pip install --upgrade pip
   ```
