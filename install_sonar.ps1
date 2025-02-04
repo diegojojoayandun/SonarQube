@@ -2,7 +2,6 @@
 $sonarqubeVersion = "10.2.1.78527"  # Cambia a la última versión disponible
 $downloadUrl = "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-$sonarqubeVersion.zip"
 $installPath = "C:\SonarQube"
-$javaVersion = "jdk-17"
 $javaPath = "C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot"
 
 # Verifica permisos de administrador
@@ -33,9 +32,13 @@ if (-not (Test-Path $installPath)) {
     Rename-Item -Path "C:\sonarqube-$sonarqubeVersion" -NewName "SonarQube"
 }
 
-# Configurar JAVA_HOME
+# Configurar JAVA_HOME y SONAR_JAVA_PATH
+Write-Host "Configurando JAVA_HOME y SONAR_JAVA_PATH..."
 [System.Environment]::SetEnvironmentVariable("JAVA_HOME", $javaPath, [System.EnvironmentVariableTarget]::Machine)
+[System.Environment]::SetEnvironmentVariable("SONAR_JAVA_PATH", "$javaPath\bin\java.exe", [System.EnvironmentVariableTarget]::Machine)
+
 $env:JAVA_HOME = $javaPath
+$env:SONAR_JAVA_PATH = "$javaPath\bin\java.exe"
 $env:Path += ";$javaPath\bin"
 
 # Iniciar SonarQube
