@@ -38,3 +38,19 @@
    ```
 
 3. accede a SonarQube http://localhost:9000
+
+## Opción 3: DOCKER
+
+### Prerrequisitos:
+
+- **docker**
+
+1. Ejecuta PowerShell como administrador
+2. Pega el siguiente comando:
+
+   ```powershell
+   docker-compose up -d
+
+   ```
+
+3. accede a SonarQube http://localhost:9000
